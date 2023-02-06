@@ -1,0 +1,29 @@
+
+{%extends 'index.html'%}
+{%block content%}
+        <section style="margin-top:50px;padding: 5%2%;">
+            <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header" style="text-align: center;">
+                    <h4 class=" fw-normal">Edit Book</h4>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                    	{% load crispy_forms_tags %}
+                    	<ul class="list-unstyled mt-3 mb-4">
+                        {% csrf_token %}
+                            <div class="row">
+                                <div class="col-lg-6">{{form.title|as_crispy_field}}</div>
+                                <div class="col-lg-6">{{form.authors|as_crispy_field}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4">{{form.publisher|as_crispy_field}}</div>
+                                <div class="col-lg-4">{{form.isbn|as_crispy_field}}</div>
+                                <div class="col-lg-4">{{form.page|as_crispy_field}}</div>
+                            </div>
+                        </ul>
+                        <button type="submit" class="w-100 btn btn-lg btn-dark">Edit Book</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+ {%endblock%}

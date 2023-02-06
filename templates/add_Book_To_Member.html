@@ -1,0 +1,26 @@
+{%extends 'index.html'%}
+
+
+
+{%block content%}
+<section style="margin-top:50px;padding: 5%2%;">
+<form method="POST" enctype="multipart/form-data">
+
+  {% csrf_token %}
+  <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header" style="text-align: center;">
+                <h4 class=" fw-normal">Book Register</h4>
+            </div>
+  <div class="card-body p-5">
+    <div class="row form-group">
+        <div class="col-lg-6">
+            <label>ISBM</label>
+        <input type="number" class="form-control" name="isbn" placeholder="Enter ISBN" required>
+        </div>
+        </div>
+    </div>
+</div>
+  <button type="submit" class="w-100 btn btn-lg btn-dark mt-3">Register</button>
+  </form>
+</section>
+{%endblock%}
